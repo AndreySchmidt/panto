@@ -1,0 +1,21 @@
+// Retina
+@mixin retina-bg($image) {
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    background-image: $image;
+  }
+}
+
+.header {
+  background-color: var(--bg);
+  background-image: url("./../../img/header.jpg");
+  background-size: cover;
+  aspect-ratio: 1440 / 1084;
+
+  // Retina
+  @include retina-bg(url("./../../img/header@2x.jpg"));
+  // @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  //   // .header {
+  //   background-image: url("./../../img/header@2x.jpg");
+  //   // }
+  // }
+}
